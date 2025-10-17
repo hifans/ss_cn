@@ -6,7 +6,7 @@ import "server-only";
 import { ThemeProvider } from "@/components/providers";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import NextTopLoader from 'nextjs-toploader'
+import NextTopLoader from "nextjs-toploader";
 import { SITE_NAME, SITE_DESCRIPTION, SITE_URL } from "@/constants";
 import { AgenticDevStudioStickyBanner } from "@/components/startup-studio-sticky-banner";
 
@@ -17,13 +17,13 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: {
     default: SITE_NAME,
-    template: `%s - ${SITE_NAME}`,
+    template: `%s`,
   },
   description: SITE_DESCRIPTION,
   metadataBase: new URL(SITE_URL),
-  keywords: ["SaaS", "Next.js", "React", "TypeScript", "Cloudflare Workers", "Edge Computing"],
-  authors: [{ name: "Lubomir Georgiev" }],
-  creator: "Lubomir Georgiev",
+  keywords: ["jellyfish", "simplestone", "快看水母"],
+  authors: [{ name: "范特西" }],
+  creator: "范特西",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: SITE_NAME,
     description: SITE_DESCRIPTION,
-    creator: "@LubomirGeorg",
+    creator: "@hifans",
   },
   robots: {
     index: true,
@@ -64,20 +64,19 @@ export default function BaseLayout({
           shadow="0 0 10px #000, 0 0 5px #000"
           height={4}
         />
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-        >
-          <TooltipProvider
-            delayDuration={100}
-            skipDelayDuration={50}
-          >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <TooltipProvider delayDuration={100} skipDelayDuration={50}>
             {children}
           </TooltipProvider>
         </ThemeProvider>
-        <Toaster richColors closeButton position="top-right" expand duration={7000} />
-        <AgenticDevStudioStickyBanner />
+        <Toaster
+          richColors
+          closeButton
+          position="top-right"
+          expand
+          duration={7000}
+        />
+        {/* <AgenticDevStudioStickyBanner /> */}
       </body>
     </html>
   );
