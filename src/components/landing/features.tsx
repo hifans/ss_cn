@@ -3,10 +3,8 @@ import {
   BoltIcon,
   ShieldCheckIcon,
   RocketLaunchIcon,
-  EnvelopeIcon,
   CommandLineIcon,
   SunIcon,
-  UserGroupIcon,
   MapPinIcon,
   BarsArrowUpIcon,
 } from "@heroicons/react/24/outline";

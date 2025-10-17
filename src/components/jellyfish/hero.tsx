@@ -1,10 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { GITHUB_REPO_URL } from "@/constants";
 import Link from "next/link";
-import ShinyButton from "@/components/ui/shiny-button";
-import { getTotalUsers } from "@/utils/stats";
-import { Suspense } from "react";
-import { Skeleton } from "@/components/ui/skeleton";
 import LineText from "../lineText";
 import { SiApple, SiAndroid } from "@icons-pack/react-simple-icons";
 import { RoughNotation } from "react-rough-notation";
@@ -65,28 +60,6 @@ export function Hero() {
           </div>
         </div>
       </div>
-    </div>
-  );
-}
-
-// This component will be wrapped in Suspense
-async function TotalUsersButton() {
-  const totalUsers = await getTotalUsers();
-
-  if (!totalUsers) return null;
-
-  return (
-    <ShinyButton className="rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400 ring-1 ring-inset ring-purple-500/20">
-      {totalUsers} Users & Growing
-    </ShinyButton>
-  );
-}
-
-// Skeleton fallback for the TotalUsersButton
-function TotalUsersButtonSkeleton() {
-  return (
-    <div className="rounded-full bg-purple-500/10 ring-1 ring-inset ring-purple-500/20 px-4 py-1.5 text-sm font-medium">
-      <Skeleton className="w-32 h-5" />
     </div>
   );
 }
