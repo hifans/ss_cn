@@ -7,8 +7,7 @@ export const SITE_URL =
   process.env.NODE_ENV === "development"
     ? "http://localhost:3000"
     : "https://simplestone.cn";
-export const GITHUB_REPO_URL =
-  "https://github.com/LubomirGeorgiev/cloudflare-workers-nextjs-saas-template";
+export const GITHUB_REPO_URL = "https://github.com/hifans/ss_cn";
 
 export const SITE_DOMAIN = new URL(SITE_URL).hostname;
 export const PASSWORD_RESET_TOKEN_EXPIRATION_SECONDS = 24 * 60 * 60; // 24 hours
